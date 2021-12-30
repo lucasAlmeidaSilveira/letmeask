@@ -1,0 +1,150 @@
+#page-auth {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+
+  aside {
+    flex: 7;
+
+    background: var(--purple);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px;
+
+    img {
+      max-width: 400px;
+    }
+
+    strong {
+      font: 700 36px "Poppins", sans-serif;
+      line-height: 42px;
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 1rem;
+      color: var(--background);
+    }
+  }
+
+  main {
+    flex: 8;
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    align-items: stretch;
+    text-align: center;
+
+    > img {
+      align-self: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 4rem 0 1.5rem;
+      font-family: "Poppins", sans-serif;
+      color: var(--black);
+    }
+
+    form {
+      input {
+        height: 50px;
+        border-radius: 8px;
+        padding: 0 1rem;
+        background: var(--white);
+        border: 1px solid var(--gray-medium);
+        outline-color: var(--purple);
+      }
+
+      > button {
+        margin-top: 1rem;
+      }
+
+      > button,
+      input {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: var(--gray-dark);
+      margin-top: 1rem;
+
+      a {
+        color: var(--pink-dark);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .create-room {
+    margin-top: 64px;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: var(--red-google);
+    color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: 0;
+
+    transition: filter 0.2s;
+
+    svg {
+      font-size: 1.8rem;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .separator {
+    font-size: 0.875rem;
+    color: var(--gray-medium);
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &::before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gray-medium);
+      margin-right: 1rem;
+    }
+
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gray-medium);
+      margin-left: 1rem;
+    }
+  }
+}
