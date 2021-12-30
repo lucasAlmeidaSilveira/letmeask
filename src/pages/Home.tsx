@@ -4,13 +4,13 @@ import { AiOutlineGoogle } from 'react-icons/ai';
 
 import '../styles/auth.scss'
 import { Button } from '../components/Button';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function navigateToNewRoom(){
-    history.push('/rooms/new')
+    navigate('/rooms/new')
   }
 
   return (
