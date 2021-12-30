@@ -2,15 +2,20 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import { AiOutlineGoogle } from 'react-icons/ai';
 
-import '../styles/auth.scss'
+import '../styles/auth.scss';
 import { Button } from '../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 export function Home() {
   const navigate = useNavigate();
+  const { user, signInWithGoogle } = useAuth();
 
-  function navigateToNewRoom(){
-    navigate('/rooms/new')
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle();
+    }
+    navigate('/rooms/new');
   }
 
   return (
@@ -27,7 +32,7 @@ export function Home() {
       <main>
         <div className='main-content'>
           <img src={logoImg} alt='Logo Letmeask' />
-          <button onClick={navigateToNewRoom} className='create-room'>
+          <button onClick={handleCreateRoom} className='create-room'>
             <AiOutlineGoogle color='#ffffff' />
             Crie sua sala com o Google
           </button>
@@ -35,10 +40,7 @@ export function Home() {
           <div className='separator'>ou entre em uma sala</div>
 
           <form>
-            <input 
-            type='text' 
-            placeholder='Digite o código da sala' 
-          />
+            <input type='text' placeholder='Digite o código da sala' />
             <Button type='submit'>Entrar na sala</Button>
           </form>
         </div>
