@@ -4,8 +4,15 @@ import { AiOutlineGoogle } from 'react-icons/ai';
 
 import '../styles/auth.scss'
 import { Button } from '../components/Button';
+import { useHistory } from 'react-router-dom';
 
 export function Home() {
+  const history = useHistory();
+
+  function navigateToNewRoom(){
+    history.push('/rooms/new')
+  }
+
   return (
     <div id='page-auth'>
       <aside>
@@ -20,7 +27,7 @@ export function Home() {
       <main>
         <div className='main-content'>
           <img src={logoImg} alt='Logo Letmeask' />
-          <button className='create-room'>
+          <button onClick={navigateToNewRoom} className='create-room'>
             <AiOutlineGoogle color='#ffffff' />
             Crie sua sala com o Google
           </button>
