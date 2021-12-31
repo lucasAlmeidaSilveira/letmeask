@@ -25,6 +25,10 @@
   --red-google: #ea4335;
 }
 
+body {
+  background: var(--background);
+}
+
 body,
 input,
 button,

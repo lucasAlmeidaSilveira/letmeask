@@ -63,10 +63,9 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
     }
   }
 
-
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
-      { children }
+      {children}
     </AuthContext.Provider>
   );
 }
