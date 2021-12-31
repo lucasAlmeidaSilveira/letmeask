@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
@@ -13,7 +14,9 @@ export function Room() {
     <div id='page-room'>
       <header>
         <div className='content'>
-          <img src={logoImg} alt='Logo Letmeask' />
+          <Link to='/'>
+            <img src={logoImg} alt='Logo Letmeask' />
+          </Link>
           <RoomCode code={params.id} />
         </div>
       </header>
