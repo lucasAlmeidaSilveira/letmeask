@@ -79,7 +79,7 @@ export function Room() {
     }
 
     if (!user) {
-      throw toast.error('Você precisa estar logado');
+      return toast.error('Você precisa estar logado');
     }
 
     const question = {
@@ -140,8 +140,6 @@ export function Room() {
             <Toaster position='top-center' reverseOrder={true} />
           </div>
         </form>
-
-
       </main>
     </div>
   );
