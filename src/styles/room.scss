@@ -61,7 +61,7 @@
         align-items: center;
         margin-top: 1.06rem;
 
-        .user-info{
+        .user-info {
           display: flex;
           align-items: center;
 
@@ -93,7 +93,7 @@
             font-weight: 500;
             cursor: pointer;
 
-            transition: color .2s;
+            transition: color 0.2s;
 
             &:hover {
               color: var(--purple-hover);
@@ -101,6 +101,10 @@
           }
         }
       }
+    }
+
+    .question-list {
+      margin-top: 2.13rem;
     }
   }
 }
