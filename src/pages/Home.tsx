@@ -28,11 +28,15 @@ export function Home() {
     if (roomCode.trim() === '') {
       return;
     }
-
+    
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
-
+    
     if (!roomRef.exists()) {
       return toast.error('Esta sala não existe');
+    }
+    
+    if(roomRef.val().endedAt) {
+      return toast.error('Esta sala foi encerrada');
     }
 
     navigate(`/rooms/${roomCode}`);
